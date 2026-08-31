@@ -29,3 +29,6 @@ add_executable(A_Greg_and_Array "A_Greg_and_Array.cpp")
 add_executable(A_Extreme_Subtraction "A_Extreme_Subtraction.cpp")
 add_executable(C_Helping_the_Nature "C_Helping_the_Nature.cpp")
 add_executable(B_Gigantomachy "B_Gigantomachy.cpp")
+
+add_executable(B_Chemistry "B_Chemistry.cpp")
+add_executable(A_Jellyfish_and_Undertale "A_Jellyfish_and_Undertale.cpp")

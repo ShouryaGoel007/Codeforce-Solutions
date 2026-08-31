@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void solve() {
+int solve() {
     int n,m;
     cin >> n>>m;
     vector<int> v1(n),v2(m);
@@ -13,10 +13,17 @@ void solve() {
     for (int i=0;i<m;i++) {
         cin >> v2[i];
     }
-    if (accumulate(v1.begin(),v1.end(),0)>=accumulate(v2.begin(),v2.end(),0)) {
-        return 1;
+    int a=0,b=0;
+    for (int i=0;i<n-1;i++) {
+        a+=v1[i]-v1[i+1]+1;
     }
-    return 2;
+    a+=v1[n-1];
+    for (int i=1;i<m;i++) {
+        b+=-v2[i]+v2[i-1]+1;
+    }
+    b+=v2[m-1];
+    if (b>a) return 2;
+    return 1;
 }
 
 int main() {
@@ -24,10 +31,10 @@ int main() {
     cin.tie(nullptr);
 
     int t=1;
-    //cin >> t;
+    cin >> t;
 
     while (t--) {
-        solve();
+        cout<<solve()<<endl;
     }
 
     return 0;
