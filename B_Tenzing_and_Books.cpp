@@ -1,29 +1,29 @@
-//  A. Jellyfish and Undertale
+//  B. Tenzing and Books
 
 #include <bits/stdc++.h>
 using namespace std;
-#define int long long
 
 void solve() {
-    long long a,b,n;
-    cin >> a>>b>>n;
-    vector<long long> v1(n);
+    long long n,x;
+    cin >> n>>x;
+    vector<long long> v1(n),v2(n),v3(n);
     for (long long i=0;i<n;i++) {
         cin >> v1[i];
     }
-    sort(v1.begin(), v1.end());
-    long long ans=b;
     for (long long i=0;i<n;i++) {
-        ans+=min(v1[i],a-1);
+        cin >> v2[i];
     }
-    cout <<  ans<< endl;
+    for (long long i=0;i<n;i++) {
+        cin >> v3[i];
+    }
+
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    long long t=1;
+    long long t = 1;
     cin >> t;
 
     while (t--) {

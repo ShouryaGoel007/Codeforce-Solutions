@@ -4,15 +4,15 @@
 using namespace std;
 
 void solve() {
-    int n,k;
+    long long n,k;
     cin >> n>>k;
     string s;
     cin >> s;
-    unordered_map<char,int> mpp;
+    unordered_map<char,long long> mpp;
     for (auto i:s) {
         mpp[i]++;
     }
-    int cnt=0;
+    long long cnt=0;
     for (auto it: mpp){
         if (it.second%2!=0) {
             cnt+=it.second%2;
@@ -26,7 +26,7 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int t=1;
+    long long t=1;
     cin >> t;
 
     while (t--) {
