@@ -16,7 +16,7 @@ void solve() {
     for (long long i=0;i<n;i++) {
         cin >> v3[i];
     }
-
+    
 }
 
 int main() {

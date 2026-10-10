@@ -10,22 +10,35 @@ int main(){
         for(int i=0;i<n;i++) {
             cin>>v1[i];
         }
-        sort(v1.begin(),v1.end());
-        vector<int> v2(n);
-        int left=0,right=n-1;
-        while (left<right) {
-            if (v1[left]==v1[right]) {
-                v2[left]=right+1;
-                for (int i=left+1;i<right;i++) {
-                    v2[i]=i-1;
-                }
-                left=right+1;
-                right=n-1;
+        unordered_map<int,vector<int>>mp;
+        int i=0;
+        for (int a:v1) {
+            mp[a].push_back(i);
+            i++;
+        }
+        i=0;
+        int flag=0;
+        for (auto a:mp) {
+            if (a.second.size()<2) {
+                cout<<-1<<endl;
+                flag=1;
+                break;
             }
         }
-        for (int i=0;i<n;i++) {
-            cout<<v2[i]<<" ";
+        if (flag==0) {
+            vector<int> ans(n);
+            for (auto &it : mp) {
+                auto &ct=it.second;
+                int size=ct.size();
+                for (i=0;i<size;i++) {
+                    ans[ct[i]]=((ct[(i+1)%size]));
+                }
+            }
+            for (int i=0;i<n;i++) {
+                cout<<ans[i]+1<<" ";
+            }
         }
+
         cout<<endl;
     }
 }    
