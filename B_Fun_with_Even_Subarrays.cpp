@@ -13,23 +13,20 @@ void solve() {
     int i=n-1;
     while (i>=0 && v1[i]==v1[n-1]) {
         i--;
-    }int ans=0;
+    }
+    int ans=0;
     if (i==-1) {
         cout<<0<<endl;
-        // return;
+        return;
     }
-
-    else
-    {
-        while (i>=0) {
-            i-=n-i-1;
-            ans++;
-            while (i>=0 && v1[i]==v1[n-1]) {
-                i--;
-            }
-        }    cout<<ans<<endl;
-
+    while (i>=0) {
+        i-=n-i-1;
+        ans++;
+        while (i>=0 && v1[i]==v1[n-1]) {
+            i--;
+        }
     }
+    cout<<ans<<endl;
     return;
 }
 
